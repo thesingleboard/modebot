@@ -3,9 +3,19 @@
 DISKSIZE='4096'
 
 sudo cp mode.txt /etc/motd
+
+#upgrade the PI
+sudo apt update
+sudo apt upgrade
+
+#Install packages
 sudo apt install -y python3-pip
 sudo apt install -y exfat-fuse exfat-utils
 sudo pip3 install watchdog
+
+#Set the MODEbot name
+hostnamectl set-hostname modebot
+
 
 
 #add the dt overlay
