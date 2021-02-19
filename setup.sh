@@ -26,26 +26,23 @@ sudo echo 'dwc2' >> /etc/modules
 
 #Create a blank usb disk
 sudo dd bs=1M if=/dev/zero of=/piusb.bin count=${DISKSIZE}
-sudo mkdosfs /piusb.bin -F 32 -I
+sudo mkfs.exfat -n LABEL /piusb.bin
 
 #create a mount point
 sudo mkdir -p /mnt/usb_share
 
 #automount the new disk
-sudo echo '/piusb.bin /mnt/usb_share vfat users,umask=000 0 2' >> /etc/fstab
+sudo echo '/piusb.bin /mnt/usb_share exfat users,umask=000 0 2' >> /etc/fstab
 
 sudo mount -a
 
 sudo sed -i 's/exit\ 0/modprobe\ g\_mass\_storage\ file\=\/piusb\.bin\ stall\=0\ ro\=1/g' /etc/rc.local
 sudo echo 'exit 0' >> /etc/rc.local
 
-#mount the disk
-sudo mount -a
-
 #set up samba so we can mount over the network
-echo "samba-common samba-common/workgroup string  WORKGROUP" | sudo debconf-set-selections
-echo "samba-common samba-common/dhcp boolean true" | sudo debconf-set-selections
-echo "samba-common samba-common/do_debconf boolean true" | sudo debconf-set-selections
+sudo echo "samba-common samba-common/workgroup string  WORKGROUP" | sudo debconf-set-selections
+sudo echo "samba-common samba-common/dhcp boolean true" | sudo debconf-set-selections
+sudo echo "samba-common samba-common/do_debconf boolean true" | sudo debconf-set-selections
 sudo apt install -y samba winbind
 
 #copy the scaner to /usr/local/share
