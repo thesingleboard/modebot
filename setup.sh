@@ -5,8 +5,8 @@ DISKSIZE='4096'
 sudo cp mode.txt /etc/motd
 
 #upgrade the PI
-sudo apt update
-sudo apt upgrade
+sudo apt -y update
+sudo apt -y upgrade
 
 #Install packages
 sudo apt install -y python3-pip
