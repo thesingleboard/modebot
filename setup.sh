@@ -45,6 +45,16 @@ sudo echo "samba-common samba-common/dhcp boolean true" | sudo debconf-set-selec
 sudo echo "samba-common samba-common/do_debconf boolean true" | sudo debconf-set-selections
 sudo apt install -y samba winbind
 
+#add usb samba share
+cat << EOF >> /etc/samba/smb.conf
+[usb]
+browseable = yes
+path = /mnt/usb_share
+guest ok = yes
+read only = no
+create mask = 777
+EOF
+
 #copy the scaner to /usr/local/share
 sudo cp modebotscan.py /usr/local/share/
 sudo chmod +x /usr/local/share/modebotscan.py
