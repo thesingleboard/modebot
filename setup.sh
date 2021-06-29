@@ -16,8 +16,6 @@ sudo pip3 install watchdog
 #Set the MODEbot name
 hostnamectl set-hostname modebot
 
-
-
 #add the dt overlay
 sudo echo 'dtoverlay=dwc2' >> /boot/config.txt
 
@@ -55,6 +53,8 @@ read only = no
 create mask = 777
 EOF
 
+sudo systemctl restart smbd.service
+
 #copy the scaner to /usr/local/share
 sudo cp modebotscan.py /usr/local/share/
 sudo chmod +x /usr/local/share/modebotscan.py
@@ -66,3 +66,6 @@ sudo cp modebot.service /etc/systemd/system/
 sudo systemctl daemon-reload
 sudo systemctl enable modebot.service
 sudo systemctl start modebot.service
+
+#kill some unneccessary services
+
