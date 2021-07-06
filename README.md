@@ -8,7 +8,7 @@ Attribution: Russell Barnes - Magpi - https://magpi.raspberrypi.org/articles/pi-
 
 **Raspberry Pi Zero W**
 
-PIC
+<img src="./pics/piZero.JPG">
 
 The Modebot uses a Raspberry PI Zero W since it is small, low power, and does not need any sort of fans or cooling. They are also widley available and relativly inexpensive.
 
@@ -36,7 +36,7 @@ There are several SD card flashing utilities you can use. The two popular flash 
 
 **USB Dongle Module**
 
-PIC
+<img src="./pics/iUniker.JPG">
 
 The Terraonion MODE accepts a USB stick as one of the supported storage types. However, you can not use the USB storage with an SSD installed on the MODE.
 
