@@ -18,9 +18,16 @@ hostnamectl set-hostname modebot
 
 #add the dt overlay
 sudo echo 'dtoverlay=dwc2' >> /boot/config.txt
+sudo echo 'disable_splash=1' >> /boot/config.txt
+sudo echo 'boot_delay=0' >> /boot/config.txt
+sudo echo 'force_turbo=1' >> /boot/config.txt
+sudo echo 'dtoverlay=sdtweak,overclock_50=100' >> /boot/config.txt
 
 #add the overlay to modules
 sudo echo 'dwc2' >> /etc/modules
+
+#fix the boot cmd
+sudo sed -i 's/rootwait/quiet\ rootwait/g' /boot/cmdline.txt
 
 #Create a blank usb disk
 sudo dd bs=1M if=/dev/zero of=/piusb.bin count=${DISKSIZE}
