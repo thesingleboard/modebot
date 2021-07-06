@@ -83,7 +83,7 @@ Use Git to pull this repository down to the MODEbot. Once pulled you will be abl
 
 ```
 # cd modebot
-``
+```
 
 Edit the disk size you wish to create. The default set in the script is 4GB in megabytes.
 
