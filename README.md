@@ -93,5 +93,6 @@ Edit the disk size you wish to create. The default set in the script is 4GB in m
 # sudo ./setup.sh
 ```
 
-When the install is done, reboot your MODEbot and use SSH to connect.
+When the install is done, reboot your MODEbot and use SSH to connect to make sure you can connect to it.
 
+<img src="./pics/modebot.JPG">
