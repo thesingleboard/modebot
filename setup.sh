@@ -34,7 +34,7 @@ sudo echo '/piusb.bin /mnt/usb_share exfat users,umask=000 0 2' >> /etc/fstab
 
 sudo mount -a
 
-sudo sed -i 's/exit\ 0/modprobe\ g\_mass\_storage\ file\=\/piusb\.bin\ stall\=0\ ro\=1/g' /etc/rc.local
+sudo sed -i 's/exit\ 0/modprobe\ g\_mass\_storage\ file\=\/piusb\.bin\ stall\=0\ ro\=0/g' /etc/rc.local
 sudo echo 'exit 0' >> /etc/rc.local
 
 #set up samba so we can mount over the network
