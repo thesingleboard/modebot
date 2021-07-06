@@ -18,9 +18,16 @@ hostnamectl set-hostname modebot
 
 #add the dt overlay
 sudo echo 'dtoverlay=dwc2' >> /boot/config.txt
+sudo echo 'disable_splash=1' >> /boot/config.txt
+sudo echo 'boot_delay=0' >> /boot/config.txt
+sudo echo 'force_turbo=1' >> /boot/config.txt
+sudo echo 'dtoverlay=sdtweak,overclock_50=100' >> /boot/config.txt
 
 #add the overlay to modules
 sudo echo 'dwc2' >> /etc/modules
+
+#fix the boot cmd
+sudo sed -i 's/rootwait/quiet\ rootwait/g' /boot/cmdline.txt
 
 #Create a blank usb disk
 sudo dd bs=1M if=/dev/zero of=/piusb.bin count=${DISKSIZE}
@@ -34,7 +41,7 @@ sudo echo '/piusb.bin /mnt/usb_share exfat users,umask=000 0 2' >> /etc/fstab
 
 sudo mount -a
 
-sudo sed -i 's/exit\ 0/modprobe\ g\_mass\_storage\ file\=\/piusb\.bin\ stall\=0\ ro\=1/g' /etc/rc.local
+sudo sed -i 's/exit\ 0/modprobe\ g\_mass\_storage\ file\=\/piusb\.bin\ stall\=0\ ro\=0/g' /etc/rc.local
 sudo echo 'exit 0' >> /etc/rc.local
 
 #set up samba so we can mount over the network
