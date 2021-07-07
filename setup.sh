@@ -1,12 +1,34 @@
 #!/bin/bash -x
 
 DISKSIZE='4096'
+PASS='password'
+
+#admin password(pi user)
+ADMINPASS='modebot1!*'
 
 sudo cp mode.txt /etc/motd
+
+#chnage pi user pass
+sudo echo -e "${ADMINPASS}\n${ADMINPASS}\n" | sudo passwd modebot
 
 #upgrade the PI
 sudo apt -y update
 sudo apt -y upgrade
+
+#modebot user
+sudo mkdir /home/modebot
+sudo useradd -U -d /home/modebot -s /bin/bash modebot
+sudo chown modebot:modebot /home/modebot
+sudo echo -e "${PASS}\n${PASS}\n" | sudo passwd modebot
+
+#add the groups
+sudo usermod -aG pi modebot;usermod -aG adm modebot
+
+#set the bashrc
+sudo cp .bashrc /home/modebot
+sudo chown modebot:modebot /home/modebot/.bashrc;sudo chmod 644 /home/modebot/.bashrc
+sudo cp .profile /home/modebot
+sudo chown modebot:modebot /home/modebot/.profile;sudo chmod 644 /home/modebot/.profile
 
 #Install packages
 sudo apt install -y python3-pip
@@ -17,11 +39,18 @@ sudo pip3 install watchdog
 hostnamectl set-hostname modebot
 
 #add the dt overlay
-sudo echo 'dtoverlay=dwc2' >> /boot/config.txt
-sudo echo 'disable_splash=1' >> /boot/config.txt
-sudo echo 'boot_delay=0' >> /boot/config.txt
-sudo echo 'force_turbo=1' >> /boot/config.txt
-sudo echo 'dtoverlay=sdtweak,overclock_50=100' >> /boot/config.txt
+#sudo echo 'dtoverlay=dwc2' >> /boot/config.txt
+#sudo echo 'disable_splash=1' >> /boot/config.txt
+#sudo echo 'boot_delay=0' >> /boot/config.txt
+#sudo echo 'force_turbo=1' >> /boot/config.txt
+#sudo echo 'dtoverlay=sdtweak,overclock_50=100' >> /boot/config.txt
+cat << EOF >> /boot/config.txt
+dtoverlay=dwc2
+disable_splash=1
+boot_delay=0
+force_turbo=1
+dtoverlay=sdtweak,overclock_50=100
+EOF
 
 #add the overlay to modules
 sudo echo 'dwc2' >> /etc/modules
