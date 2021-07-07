@@ -8,7 +8,7 @@ Attribution: Russell Barnes - Magpi - https://magpi.raspberrypi.org/articles/pi-
 
 **Raspberry Pi Zero W**
 
-<img src="./pics/piZero.JPG">
+<img src="./pics/piZero.jpg">
 
 The Modebot uses a Raspberry PI Zero W since it is small, low power, and does not need any sort of fans or cooling. They are also widley available and relativly inexpensive.
 
@@ -36,7 +36,7 @@ There are several SD card flashing utilities you can use. The two popular flash 
 
 **USB Dongle Module**
 
-<img src="./pics/iUniker.JPG">
+<img src="./pics/iUniker.jpg">
 
 The Terraonion MODE accepts a USB stick as one of the supported storage types. However, you can not use the USB storage with an SSD installed on the MODE.
 
@@ -109,7 +109,7 @@ Pi user password: ADMINPASS='modebot1!*'
 
 When the install is done, reboot your MODEbot and use SSH to connect to make sure you can connect to it.
 
-<img src="./pics/modebotSmall.jpg">
+<img src="./pics/modebotSmall.png">
 
 The modebot account should be used to login and add new images to the modebot.
 
