@@ -55,6 +55,8 @@ In the absence of a USB adapter a USB cable can be used. However you will need t
 The most obvious part is to have the MODE properly installed in your console, tested and functional. The MODE install is outside of the scope of this project, however the Terraonion team has put together a comprehnsive
 set of instructions that make the install very straight forward.
 
+*NOTE:* When you set up your MODE, make sure the reset behavior is set to "boot to menu"
+
 [MODE](https://terraonion.com/en/producto/terraonion-mode/)
 
 ## Setup MODEbot.
