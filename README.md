@@ -4,6 +4,10 @@ Load images to a Terraonion MODE over the network.
 
 Attribution: Russell Barnes - Magpi - https://magpi.raspberrypi.org/articles/pi-zero-w-smart-usb-flash-drive
 
+## Demo
+
+[MODEbot Demo Video](https://www.youtube.com/watch?v=mi9UhaYOHc4)
+
 ## Materials needed
 
 **Raspberry Pi Zero W**
