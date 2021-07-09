@@ -63,7 +63,7 @@ set of instructions that make the install very straight forward.
 
 **Game Images**
 
-YOu will need to find or make your own backups.
+You will need to find or make your own backups.
 
 *Disclaimer:* Only use backup images of discs you own.
 
