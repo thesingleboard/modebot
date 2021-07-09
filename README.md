@@ -55,9 +55,14 @@ In the absence of a USB adapter a USB cable can be used. However you will need t
 The most obvious part is to have the MODE properly installed in your console, tested and functional. The MODE install is outside of the scope of this project, however the Terraonion team has put together a comprehnsive
 set of instructions that make the install very straight forward.
 
-*NOTE:* When you set up your MODE, make sure the reset behavior is set to "boot to menu"
-
 [MODE](https://terraonion.com/en/producto/terraonion-mode/)
+
+**Game Images**
+
+YOu will need to find or make your own backups.
+
+*Disclaimer:* Only use backup images of discs you own.
+
 
 ## Setup MODEbot.
 
@@ -168,4 +173,4 @@ the MODE and MODEbot to stay powered up, but for the console and MODE to reread 
 
 <img src="./pics/pic4.png">
 
-At this point you should see your game list. If you add new games to the MODEbot, simply press reset and they will appear in the games list.
+At this point you should see your game list. If you add new games to the MODEbot, simply press sw2 on the MODE, and reenter the MODE menu, the newly uploaded games will appear in the list.
