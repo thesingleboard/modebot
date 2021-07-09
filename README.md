@@ -153,19 +153,19 @@ The MODEbot should autorefresh, and the games will show up in the list when you 
 
 In order to use the MODEbot, connect the USB Dongle to the USB port on the MODE and turn on the console. The MODE will supply all power to the MODEbot.
 
-<pic>
+<img src="./pics/pic1.png">
 
 Once the console is powered up, you will see the green led on the PI Zero flashing as it boots up.
 
-<pic>
+<img src="./pics/pic2.png">
 
 Once the console is booted, and the green led on the PI Zero stops flashing, press the console reset button.
 
-<pic>
+<img src="./pics/pic3.png">
 
 Since the MODEbot takes a couple of seconds to make the storage available, it may not be ready for the MODE to detect. Pressing the reset button allows
 the MODE and MODEbot to stay powered up, but for the console and MODE to reread the storage.
 
-<pic>
+<img src="./pics/pic4.png">
 
 At this point you should see your game list. If you add new games to the MODEbot, simply press reset and they will appear in the games list.
