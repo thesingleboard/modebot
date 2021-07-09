@@ -111,7 +111,7 @@ When the install is done, reboot your MODEbot and use SSH to connect to make sur
 
 <img src="./pics/modebotSmall.png">
 
-The modebot account should be used to login and add new images to the modebot.
+The *modebot* user account should be used to login and add new images to the modebot.
 
 ## Add images to the MODEbot
 
@@ -147,7 +147,7 @@ The MODEbot should autorefresh, and the games will show up in the list when you 
 
 ## Operation
 
-NOTE: In this example we use a Sega Saturn, the Sony Playstation and Sega Dreamcast should work the same but have not been tested.
+*NOTE:* A Sega Saturn is used in this example, the Sony Playstation and Sega Dreamcast should work the same but have not been tested.
 
 In order to use the MODEbot, connect the USB Dongle to the USB port on the MODE and turn on the console. The MODE will supply all power to the MODEbot.
 
