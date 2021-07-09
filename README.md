@@ -8,7 +8,7 @@ Attribution: Russell Barnes - Magpi - https://magpi.raspberrypi.org/articles/pi-
 
 **Raspberry Pi Zero W**
 
-<img src="./pics/piZero.JPG">
+<img src="./pics/piZero.jpg">
 
 The Modebot uses a Raspberry PI Zero W since it is small, low power, and does not need any sort of fans or cooling. They are also widley available and relativly inexpensive.
 
@@ -36,7 +36,7 @@ There are several SD card flashing utilities you can use. The two popular flash 
 
 **USB Dongle Module**
 
-<img src="./pics/iUniker.JPG">
+<img src="./pics/iUniker.jpg">
 
 The Terraonion MODE accepts a USB stick as one of the supported storage types. However, you can not use the USB storage with an SSD installed on the MODE.
 
@@ -55,6 +55,8 @@ In the absence of a USB adapter a USB cable can be used. However you will need t
 The most obvious part is to have the MODE properly installed in your console, tested and functional. The MODE install is outside of the scope of this project, however the Terraonion team has put together a comprehnsive
 set of instructions that make the install very straight forward.
 
+*NOTE:* When you set up your MODE, make sure the reset behavior is set to "boot to menu"
+
 [MODE](https://terraonion.com/en/producto/terraonion-mode/)
 
 ## Setup MODEbot.
@@ -71,6 +73,16 @@ MODEbot has been built and tested on a Raspberry PI Zero W, running Raspberry PI
 
 You will need to make sure that your wifi network is functional in order to connect to the MODEbot over the network.
 
+### Login
+
+Use the default Raspberry PI OS credentials if you have not already changed them.
+
+username: pi
+
+pass:raspberry
+
+CAUTION: You should change the password on the first login if you have not already done so. This account allows sudo access.
+
 ### Install Git
 
 Use Git to pull this repository down to the MODEbot. Once pulled you will be able run the setup script.
@@ -85,13 +97,75 @@ Use Git to pull this repository down to the MODEbot. Once pulled you will be abl
 # cd modebot
 ```
 
-Edit the disk size you wish to create. The default set in the script is 4GB in megabytes.
+Edit the defaults. The default set in the script is 4GB in megabytes.
+
+USB Disk size: DISKSIZE='4096'
+
+Modebot password: PASS='password'
+
+Pi user password: ADMINPASS='modebot1!*'
 
 ```
-# sudo sed -i 's/DISKSIZE\=\'4096\'/DISKSIZE\=\'YOURSIZE\'/g' setup.sh
-
 # sudo ./setup.sh
 ```
 
-When the install is done, reboot your MODEbot and use SSH to connect.
+When the install is done, reboot your MODEbot and use SSH to connect to make sure you can connect to it.
 
+<img src="./pics/modebotSmall.png">
+
+The modebot account should be used to login and add new images to the modebot.
+
+## Add images to the MODEbot
+
+There are two ways to add images on to the MODEbot. The images can be added before you plug it into the MODE, or after, via sftp or SMB.
+
+### Setup
+
+The storage needs to have a specific file hirarchy in order to work with MODE.
+
+As an example on Sega Saturn
+
+```
+Satun
+    |_MYGAMEFOLDER
+       |_MYGAME.bin
+       |_MYGAME.cue
+       |_MYGANE.iso
+```
+
+### SFTP
+
+SFTP can be used to transfer your game images to the MODEbot.
+
+<img src="./pics/sftpSmall.jpg">
+
+### SMB
+
+The MODEbot storage partition can be mounted via SMB like any other network share and copy your bin,cue or iso images to the drive.
+
+The MODEbot should autorefresh, and the games will show up in the list when you go to the MODE game list if the directory structure is correct.
+
+<img src="./pics/smb.jpg">
+
+## Operation
+
+NOTE: In this example we use a Sega Saturn, the Sony Playstation and Sega Dreamcast should work the same but have not been tested.
+
+In order to use the MODEbot, connect the USB Dongle to the USB port on the MODE and turn on the console. The MODE will supply all power to the MODEbot.
+
+<pic>
+
+Once the console is powered up, you will see the green led on the PI Zero flashing as it boots up.
+
+<pic>
+
+Once the console is booted, and the green led on the PI Zero stops flashing, press the console reset button.
+
+<pic>
+
+Since the MODEbot takes a couple of seconds to make the storage available, it may not be ready for the MODE to detect. Pressing the reset button allows
+the MODE and MODEbot to stay powered up, but for the console and MODE to reread the storage.
+
+<pic>
+
+At this point you should see your game list. If you add new games to the MODEbot, simply press reset and they will appear in the games list.
