@@ -55,9 +55,14 @@ In the absence of a USB adapter a USB cable can be used. However you will need t
 The most obvious part is to have the MODE properly installed in your console, tested and functional. The MODE install is outside of the scope of this project, however the Terraonion team has put together a comprehnsive
 set of instructions that make the install very straight forward.
 
-*NOTE:* When you set up your MODE, make sure the reset behavior is set to "boot to menu"
-
 [MODE](https://terraonion.com/en/producto/terraonion-mode/)
+
+**Game Images**
+
+You will need to find or make your own backups.
+
+*Disclaimer:* Only use backup images of discs you own.
+
 
 ## Setup MODEbot.
 
@@ -113,7 +118,7 @@ When the install is done, reboot your MODEbot and use SSH to connect to make sur
 
 <img src="./pics/modebotSmall.png">
 
-The modebot account should be used to login and add new images to the modebot.
+The *modebot* user account should be used to login and add new images to the modebot.
 
 ## Add images to the MODEbot
 
@@ -149,23 +154,23 @@ The MODEbot should autorefresh, and the games will show up in the list when you 
 
 ## Operation
 
-NOTE: In this example we use a Sega Saturn, the Sony Playstation and Sega Dreamcast should work the same but have not been tested.
+*NOTE:* A Sega Saturn is used in this example, the Sony Playstation and Sega Dreamcast should work the same but have not been tested.
 
 In order to use the MODEbot, connect the USB Dongle to the USB port on the MODE and turn on the console. The MODE will supply all power to the MODEbot.
 
-<pic>
+<img src="./pics/pic1.png">
 
 Once the console is powered up, you will see the green led on the PI Zero flashing as it boots up.
 
-<pic>
+<img src="./pics/pic2.png">
 
 Once the console is booted, and the green led on the PI Zero stops flashing, press the console reset button.
 
-<pic>
+<img src="./pics/pic3.png">
 
 Since the MODEbot takes a couple of seconds to make the storage available, it may not be ready for the MODE to detect. Pressing the reset button allows
 the MODE and MODEbot to stay powered up, but for the console and MODE to reread the storage.
 
-<pic>
+<img src="./pics/pic4.png">
 
-At this point you should see your game list. If you add new games to the MODEbot, simply press reset and they will appear in the games list.
+At this point you should see your game list. If you add new games to the MODEbot, simply press sw2 on the MODE, and reenter the MODE menu, the newly uploaded games will appear in the list.
